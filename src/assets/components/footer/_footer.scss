@@ -1,0 +1,89 @@
+.footer {
+	&__container {
+	}
+
+	&__inner {
+		padding: 56px 68px;
+
+		border-radius: 60px;
+		background: #063f73;
+
+		@media screen and (max-width: 992px) {
+			border-radius: 0px;
+			padding: 30px 15px;
+		}
+	}
+
+	&__top {
+		margin-bottom: 40px;
+
+		padding-bottom: 48px;
+		border-bottom: 1px solid #4e93d2;
+
+		@media screen and (max-width: 992px) {
+			margin-bottom: 24px;
+			padding-bottom: 24px;
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		gap: 40px;
+
+		@media screen and (max-width: 768px) {
+			flex-direction: column;
+			gap: 24px;
+		}
+	}
+
+	&__item {
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		font-size: 0.8rem;
+		color: #a0c6e8;
+	}
+
+	&__subtitle {
+		margin-bottom: 18px;
+		font-size: 1rem;
+
+		font-weight: 600;
+		color: #fff;
+	}
+
+	&__copy {
+		padding: 22px 0;
+		font-weight: 400;
+		font-size: 15px;
+		letter-spacing: -0.02em;
+		text-align: center;
+		color: #667685;
+	}
+
+	.menu {
+		gap: 15px 56px;
+		flex-wrap: wrap;
+		.menu-item {
+			a {
+				font-weight: 500;
+				font-size: 0.8rem;
+				letter-spacing: -0.02em;
+				color: #fff;
+
+				@include hover {
+					color: var(--clr-orange);
+				}
+
+				&:active {
+					color: var(--clr-orange);
+				}
+			}
+		}
+	}
+}
+.container {
+}
+.menu {
+}
+.menu-item {
+}

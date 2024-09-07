@@ -1,0 +1,42 @@
+.hero {
+	padding-top: 76px;
+
+	@media screen and (max-width: 768px) {
+		padding-top: 30px;
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		gap: 40px;
+
+		@media screen and (max-width: 768px) {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 32px;
+		@media screen and (max-width: 768px) {
+			margin-bottom: 18px;
+		}
+	}
+
+	&__info {
+		grid-column: 6 span;
+	}
+
+	&__img {
+		grid-column: 6 span;
+		height: 300px;
+		object-fit: contain;
+		width: 100%;
+
+		@media screen and (max-width: 600px) {
+			height: 200px;
+		}
+	}
+}
+.container {
+}

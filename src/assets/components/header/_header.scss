@@ -1,0 +1,148 @@
+.header {
+	padding-top: 40px;
+
+	@media screen and (max-width: 992px) {
+		padding-top: 20px;
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+
+	&__burger {
+		@media screen and (max-width: 992px) {
+			display: block;
+		}
+	}
+}
+
+.logo {
+	display: block;
+	&__img {
+		width: 60px;
+		height: 60px;
+	}
+}
+.mobile-menu {
+	@media screen and (max-width: 992px) {
+		position: fixed;
+		z-index: 10;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		height: 100%;
+		width: 320px;
+		background-color: #c3d2e0;
+
+		padding-top: 80px;
+		overflow-y: auto;
+		padding-bottom: 20px;
+		transform: translateX(100%);
+		transition: transform 240ms ease-in-out;
+
+		.menu {
+			flex-direction: column;
+		}
+
+		&.active {
+			transform: translateX(0);
+		}
+	}
+}
+.nav {
+}
+.menu {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu-item {
+	a {
+		font-family: 'Inter', sans-serif;
+		font-weight: 500;
+		font-size: 0.8rem;
+		letter-spacing: -0.02em;
+		color: #424242;
+
+		transition: color 150ms ease-in-out;
+
+		@include hover {
+			color: var(--clr-orange);
+		}
+
+		&:active {
+			color: var(--clr-orange);
+		}
+	}
+}
+
+.menu-item-has-childrem {
+	padding-right: 18px;
+	position: relative;
+	cursor: pointer;
+	&::after {
+		content: '';
+		position: absolute;
+		display: block;
+		top: 7px;
+		right: 0;
+		width: 6px;
+		height: 6px;
+		background-image: url('../img/svg/arrow_bottom.svg');
+		background-position: center center;
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+
+	.menu {
+		position: absolute;
+		min-width: 160px;
+		width: 100%;
+		padding: 30px 26px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 18px;
+		background-color: #063f73;
+		border-radius: 14px;
+		transform: translateY(20px);
+		opacity: 0;
+		visibility: hidden;
+		transition: all 100ms ease-in-out;
+		transition-delay: 500ms;
+		.menu-item {
+			a {
+				text-decoration: underline;
+				color: #fff;
+
+				@include hover {
+					color: var(--clr-orange);
+				}
+
+				&:active {
+					color: var(--clr-orange);
+				}
+			}
+		}
+	}
+}
+.menu-item-has-childrem:hover .menu {
+	opacity: 1;
+	visibility: visible;
+	transition: 100ms ease-in-out;
+	transition-delay: 0ms;
+}
